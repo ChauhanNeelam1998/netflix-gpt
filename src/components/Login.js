@@ -7,15 +7,16 @@ import {
   signInWithEmailAndPassword,
   updateProfile,
 } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import { USER_AVATAR } from "../utils/constants";
 
 const Login = () => {
   const dispatch = useDispatch();
   const [isSignIn, setIsSignIn] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const name = useRef(null);
   const email = useRef(null);
@@ -45,8 +46,7 @@ const Login = () => {
           //Update a user's profile
           updateProfile(user, {
             displayName: name.current.value,
-            photoURL:
-              "https://img.freepik.com/free-psd/3d-illustration-person-with-sunglasses_23-2149436188.jpg?w=740&t=st=1709074220~exp=1709074820~hmac=b516655021c48b089453ff25e711e605744d787d656bef98b6c0f899691443dd",
+            photoURL: USER_AVATAR,
           })
             .then(() => {
               // Profile updated!
@@ -60,7 +60,7 @@ const Login = () => {
                   photoURL: photoURL,
                 })
               );
-              navigate("/browse");
+              //navigate("/browse");
             })
             .catch((error) => {
               // An error occurred
@@ -69,7 +69,7 @@ const Login = () => {
             });
 
           // console.log(user);
-          navigate("/browse");
+          //navigate("/browse");
           // ...
         })
         .catch((error) => {
@@ -89,7 +89,7 @@ const Login = () => {
           // Signed in
           const user = userCredential.user;
           console.log(user);
-          navigate("/browse");
+          //navigate("/browse");
 
           // ...
         })
