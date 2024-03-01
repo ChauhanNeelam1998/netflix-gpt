@@ -34,7 +34,10 @@
 - Findout TMDB image CDN
 - Adding tailwind css in Secondary Component,Movie List and Card Component
 - Calling Api now Playing and Popular Movie
-- Creating Custom hook usePopularMovies.
+- Creating Custom hook usePopularMovies
+- GPT Search Page
+- GPT Search Bar
+- Multi-language Feature in Our Search Bar
 
 # Features
 
