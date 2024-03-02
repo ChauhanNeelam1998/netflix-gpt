@@ -109,13 +109,17 @@ const Login = () => {
     <div>
       <Header />
       <div className="absolute">
-        <img src={BG_URL} alt="bg_logo" />
+        <img
+          src={BG_URL}
+          alt="bg_logo"
+          className="h-screen object-cover md:w-screen "
+        />
       </div>
       <form
         onSubmit={(e) => e.preventDefault()}
-        className="absolute bg-black p-12 w-3/12 mx-auto my-36 right-0 left-0 text-white rounded-lg opacity-90"
+        className="absolute bg-black p-12 w-8/12 md:w-3/12 mx-auto  my-[14%] md:my-[5%] right-0 left-0 text-white rounded-lg opacity-90"
       >
-        <h1 className="py-3 font-bold text-3xl">
+        <h1 className="py-3 font-bold text-xl md:text-3xl">
           {isSignIn ? "Sign In" : "Sign Up"}
         </h1>
 
@@ -124,29 +128,32 @@ const Login = () => {
             ref={name}
             type="text"
             placeholder="Full Name"
-            className="p-3 my-2 w-full bg-gray-700 rounded-md"
+            className="p-2 md:p-3 my-2 w-full bg-gray-700 rounded-md"
           />
         )}
         <input
           ref={email}
           type="text"
           placeholder="Email Address"
-          className="p-3 my-2 w-full bg-gray-700 rounded-md"
+          className="p-2 md:p-3 my-2 w-full bg-gray-700 rounded-md"
         />
         <input
           ref={password}
           type="password"
           placeholder="Password"
-          className="p-3 my-2 w-full bg-gray-700 rounded-md"
+          className="p-2 md:p-3 my-2 w-full bg-gray-700 rounded-md"
         />
         <p className="text-red-700 font-semibold text-lg">{errorMessage}</p>
         <button
-          className="p-2 my-4 w-full bg-red-700 rounded-md"
+          className="p-2 md:p-2 my-4 w-full bg-red-700 rounded-md"
           onClick={handleButtonChange}
         >
           {isSignIn ? "Sign In" : "Sign Up"}
         </button>
-        <p className="py-4 cursor-pointer underline" onClick={toggelSignInForm}>
+        <p
+          className="py-4 cursor-pointer underline text-sm md:text-md"
+          onClick={toggelSignInForm}
+        >
           {isSignIn
             ? "New to Netflix? Sign Up Now"
             : "Alredy Registered? Sign In Now"}
